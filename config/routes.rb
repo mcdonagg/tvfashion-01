@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  resources :shows
+  get '/shows/search_shows_api' => 'shows#search_shows_api'
+  get '/add_show' => 'shows#add_show'
 
+  resources :shows
+  root 'shows#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

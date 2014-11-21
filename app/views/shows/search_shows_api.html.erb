@@ -1,0 +1,8 @@
+<ol>
+  <%- @shows.each do |show| -%>
+      <li>
+        <img src=http://thetvdb.com/banners/<%= show['banner'] %>></img>
+        <p><%= show['SeriesName'] %> <%= show['FirstAired'] %>
+      </li>
+  <%- end -%>
+</ol>

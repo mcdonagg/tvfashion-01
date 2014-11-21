@@ -1,3 +1,5 @@
+require 'thetvdb'
+
 class ShowsController < ApplicationController
   before_action :set_show, only: [:show, :edit, :update, :destroy]
 
@@ -6,6 +8,15 @@ class ShowsController < ApplicationController
   def index
     @shows = Show.all
   end
+
+  def search_shows_api
+    api = Thetvdb.new
+    @shows = api.search_show(params[:q])
+  end
+
+  def add_show
+  end
+
 
   # GET /shows/1
   # GET /shows/1.json
